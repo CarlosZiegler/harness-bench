@@ -1,0 +1,211 @@
+{
+  "id": "011aa776-d9a5-4315-9b8e-cf191070b591",
+  "slug": "pulseboard-codex-luna-xhigh",
+  "appName": "pulseboard-codex-luna-xhigh",
+  "taskId": "pulseboard",
+  "harness": "codex",
+  "models": [
+    {
+      "role": "solo",
+      "id": "gpt-5.6-luna",
+      "label": "luna",
+      "effort": "xhigh"
+    }
+  ],
+  "status": "completed_with_errors",
+  "startedAt": "2026-08-06T16:02:39.260Z",
+  "appDir": "/Users/zietec/work/harness-bench/apps/pulseboard-codex-luna-xhigh",
+  "resultDir": "/Users/zietec/work/harness-bench/results/pulseboard-codex-luna-xhigh",
+  "phases": [
+    {
+      "name": "build",
+      "status": "completed",
+      "startedAt": "2026-08-06T16:02:47.640Z",
+      "finishedAt": "2026-08-06T16:24:34.564Z",
+      "elapsedSeconds": 1306.924,
+      "exitCode": 0,
+      "logFile": "/Users/zietec/work/harness-bench/results/pulseboard-codex-luna-xhigh/build.log"
+    },
+    {
+      "name": "validate",
+      "status": "completed",
+      "startedAt": "2026-08-06T16:24:34.564Z",
+      "finishedAt": "2026-08-06T16:40:33.329Z",
+      "elapsedSeconds": 958.765,
+      "exitCode": 0,
+      "logFile": "/Users/zietec/work/harness-bench/results/pulseboard-codex-luna-xhigh/validate.log"
+    }
+  ],
+  "notes": [
+    "scaffold: ran `bunx --bun shadcn@latest init --preset b0 --template start --pointer --yes --force -n app`"
+  ],
+  "campaign": "fair-fight-2-luna-harness-delta",
+  "controls": {
+    "model": "gpt-5.6-luna",
+    "effort": "xhigh",
+    "mode": "agent-owns-plan",
+    "task": "pulseboard"
+  },
+  "structural": {
+    "present": {
+      "package_json": true,
+      "readme": true,
+      "dockerfile": true,
+      "docker_compose": true,
+      "env_example": true,
+      "drizzle_config": true,
+      "auth": true,
+      "tests": true,
+      "tailwind": true,
+      "tsconfig": true
+    },
+    "counts": {
+      "files": 63,
+      "tsxFiles": 25,
+      "testFiles": 1,
+      "routes": 9,
+      "components": 16
+    },
+    "stack": {
+      "tanstackStart": true,
+      "drizzle": true,
+      "betterAuth": true,
+      "shadcn": true,
+      "reui": false,
+      "postgres": true,
+      "dockerCompose": true,
+      "dockerfile": true
+    },
+    "secrets": {
+      "envCommitted": false,
+      "likelyLeakedKeys": [
+        "postgr…ard@"
+      ]
+    },
+    "packageManager": "bun"
+  },
+  "runtime": {
+    "checks": [
+      {
+        "id": "install",
+        "label": "Install dependencies",
+        "ok": true,
+        "detail": "bun install ok",
+        "elapsedMs": 666
+      },
+      {
+        "id": "typecheck",
+        "label": "Typecheck",
+        "ok": true,
+        "detail": "typecheck ok",
+        "elapsedMs": 2419
+      },
+      {
+        "id": "build",
+        "label": "Production build",
+        "ok": true,
+        "detail": "build ok",
+        "elapsedMs": 1547
+      },
+      {
+        "id": "docker_build",
+        "label": "docker build",
+        "ok": false,
+        "detail": "ypescript@6.0.3\n#11 5.892 + vite@8.2.1\n#11 5.892 + vitest@4.1.10\n#11 5.892 + @base-ui/react@1.7.0\n#11 5.892 + @fontsource-variable/inter@5.3.0\n#11 5.892 + @tailwindcss/vite@4.3.3\n#11 5.892 + @tanstack/react-devtools@0.10.9\n#11 5.892 + @tanstack/react-router@1.170.21\n#11 5.892 + @tanstack/react-router-devtools@1.167.1\n#11 5.892 + @tanstack/react-router-ssr-query@1.167.1\n#11 5.892 + @tanstack/react-start@1.168.38\n#11 5.892 + @tanstack/router-plugin@1.168.26\n#11 5.892 + better-auth@1.6.26\n#11 5.892 + class-variance-authority@0.7.1\n#11 5.892 + clsx@2.1.1\n#11 5.892 + drizzle-orm@0.45.2\n#11 5.892 + lucide-react@1.29.0\n#11 5.892 + postgres@3.4.9\n#11 5.892 + react@19.2.8\n#11 5.892 + react-dom@19.2.8\n#11 5.892 + shadcn@4.16.2\n#11 5.892 + tailwind-merge@3.6.0\n#11 5.892 + tailwindcss@4.3.3\n#11 5.892 + tw-animate-css@1.4.0\n#11 5.892 + zod@4.4.3\n#11 5.892 \n#11 5.892 647 packages installed [5.66s]\n#11 DONE 5.9s\n\n#12 [build 5/6] COPY . .\n#12 ERROR: cannot replace to directory /var/lib/docker/buildkit/containerd-overlayfs/cachemounts/buildkit520340678/app/node_modules/better-auth with file\n------\n > [build 5/6] COPY . .:\n------\nDockerfile:7\n--------------------\n   5 |     RUN bun install --frozen-lockfile --no-progress\n   6 |     \n   7 | >>> COPY . .\n   8 |     RUN bun run build\n   9 |     \n--------------------\nERROR: failed to build: failed to solve: cannot replace to directory /var/lib/docker/buildkit/containerd-overlayfs/cachemounts/buildkit520340678/app/node_modules/better-auth with file",
+        "elapsedMs": 20047
+      },
+      {
+        "id": "compose_up",
+        "label": "docker compose up --build -d",
+        "ok": false,
+        "detail": "error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: POSTGRES_PASSWORD must be set",
+        "elapsedMs": 214
+      }
+    ],
+    "allPassed": false
+  },
+  "scores": {
+    "dimensions": [
+      {
+        "id": "deliverables",
+        "label": "Deliverable completeness",
+        "weight": 20,
+        "score": 20,
+        "max": 20,
+        "notes": []
+      },
+      {
+        "id": "backend",
+        "label": "Backend correctness",
+        "weight": 15,
+        "score": 15,
+        "max": 15,
+        "notes": []
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend / WebDev quality",
+        "weight": 25,
+        "score": 23,
+        "max": 25,
+        "notes": [
+          "reui not detected (optional but preferred)"
+        ],
+        "evidence": [
+          "shadcn/base-ui present"
+        ]
+      },
+      {
+        "id": "auth_flows",
+        "label": "Auth & product flows",
+        "weight": 10,
+        "score": 10,
+        "max": 10,
+        "notes": []
+      },
+      {
+        "id": "devops",
+        "label": "DevOps / runtime validation",
+        "weight": 15,
+        "score": 13,
+        "max": 15,
+        "notes": [
+          "runtime fail: docker_build — ypescript@6.0.3\n#11 5.892 + vite@8.2.1\n#11 5.892 + vitest@4.1.10\n#11 5.892 + @base-ui/react@1.7.0\n#11 5.892 + @fontsource-variable/inter@5.3.0\n#11 5.892 + @tailwindcss/vite@4.3.3\n#11 5.892 + @tanstack/react-devtools@0.10.9\n#11 5.892 + @tanstack/react-router@1.170.21\n#11 5.892 + @tanstack/react-router-devtools@1.167.1\n#11 5.892 + @tanstack/react-router-ssr-query@1.167.1\n#11 5.892 + @tanstack/react-start@1.168.38\n#11 5.892 + @tanstack/router-plugin@1.168.26\n#11 5.892 + better-auth@1.6.26\n#11 5.892 + class-variance-authority@0.7.1\n#11 5.892 + clsx@2.1.1\n#11 5.892 + drizzle-orm@0.45.2\n#11 5.892 + lucide-react@1.29.0\n#11 5.892 + postgres@3.4.9\n#11 5.892 + react@19.2.8\n#11 5.892 + react-dom@19.2.8\n#11 5.892 + shadcn@4.16.2\n#11 5.892 + tailwind-merge@3.6.0\n#11 5.892 + tailwindcss@4.3.3\n#11 5.892 + tw-animate-css@1.4.0\n#11 5.892 + zod@4.4.3\n#11 5.892 \n#11 5.892 647 packages installed [5.66s]\n#11 DONE 5.9s\n\n#12 [build 5/6] COPY . .\n#12 ERROR: cannot replace to directory /var/lib/docker/buildkit/containerd-overlayfs/cachemounts/buildkit520340678/app/node_modules/better-auth with file\n------\n > [build 5/6] COPY . .:\n------\nDockerfile:7\n--------------------\n   5 |     RUN bun install --frozen-lockfile --no-progress\n   6 |     \n   7 | >>> COPY . .\n   8 |     RUN bun run build\n   9 |     \n--------------------\nERROR: failed to build: failed to solve: cannot replace to directory /var/lib/docker/buildkit/containerd-overlayfs/cachemounts/buildkit520340678/app/node_modules/better-auth with file",
+          "runtime fail: compose_up — error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: POSTGRES_PASSWORD must be set"
+        ]
+      },
+      {
+        "id": "code_quality",
+        "label": "Code quality & hygiene",
+        "weight": 10,
+        "score": 3,
+        "max": 10,
+        "notes": [
+          "possible secret leak (1)",
+          "large files: src/styles.css"
+        ]
+      },
+      {
+        "id": "architecture",
+        "label": "Architecture",
+        "weight": 5,
+        "score": 5,
+        "max": 5,
+        "notes": []
+      }
+    ],
+    "total": 89,
+    "max": 100,
+    "tier": "A",
+    "frontendSubscore": 92,
+    "backendSubscore": 100,
+    "devopsSubscore": 87,
+    "codeQualitySubscore": 80,
+    "killerStrength": "Deliverable completeness (20/20)",
+    "killerWeakness": "Code quality & hygiene (3/10) — possible secret leak (1)",
+    "auditedAt": "2026-08-06T16:40:58.260Z",
+    "auditor": "auto"
+  },
+  "finishedAt": "2026-08-06T16:40:58.260Z",
+  "elapsedSeconds": 2299
+}

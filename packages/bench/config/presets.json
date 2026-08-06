@@ -1,0 +1,20 @@
+{
+  "fair_fight_1": {
+    "question": "How much does the harness matter?",
+    "model": "grok-4.5",
+    "effort": "high",
+    "task": "pulseboard",
+    "mode": "agent-owns-plan",
+    "presets": ["fair-prime-grok-4.5-high", "fair-grok-cli-grok-4.5-high"]
+  },
+  "presets": {
+    "fair-prime-grok-4.5-high": {
+      "harness": "prime-agent",
+      "models": [{ "role": "solo", "id": "xai/grok-4.5", "effort": "high" }]
+    },
+    "fair-grok-cli-grok-4.5-high": {
+      "harness": "grok-cli",
+      "models": [{ "role": "solo", "id": "grok-4.5", "effort": "high" }]
+    }
+  }
+}

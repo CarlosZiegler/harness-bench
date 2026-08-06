@@ -1,0 +1,209 @@
+{
+  "id": "a125b622-c0e3-4f29-88a9-d563ea3c5450",
+  "slug": "pulseboard-grok-cli-grok-4-5-high",
+  "appName": "pulseboard-grok-cli-grok-4-5-high",
+  "taskId": "pulseboard",
+  "harness": "grok-cli",
+  "models": [
+    {
+      "role": "solo",
+      "id": "grok-4.5",
+      "label": "grok-4.5",
+      "effort": "high"
+    }
+  ],
+  "status": "completed_with_errors",
+  "startedAt": "2026-08-06T12:41:54.516Z",
+  "appDir": "/Users/zietec/work/harness-bench/apps/pulseboard-grok-cli-grok-4-5-high",
+  "resultDir": "/Users/zietec/work/harness-bench/results/pulseboard-grok-cli-grok-4-5-high",
+  "phases": [
+    {
+      "name": "build",
+      "status": "completed",
+      "startedAt": "2026-08-06T12:41:59.867Z",
+      "finishedAt": "2026-08-06T12:56:14.222Z",
+      "elapsedSeconds": 854.355,
+      "exitCode": 0,
+      "logFile": "/Users/zietec/work/harness-bench/results/pulseboard-grok-cli-grok-4-5-high/build.log",
+      "tokens": {
+        "input": 183230,
+        "output": 49027,
+        "total": 6703937
+      }
+    }
+  ],
+  "notes": [
+    "scaffold: ran `bunx --bun shadcn@latest init --preset b0 --template start --pointer --yes --force -n app`",
+    "validate prompt written (prime-agent/manual — outer loop or --phase validate)"
+  ],
+  "campaign": "fair-fight-1-harness-delta",
+  "controls": {
+    "model": "grok-4.5",
+    "effort": "high",
+    "mode": "agent-owns-plan",
+    "task": "pulseboard"
+  },
+  "structural": {
+    "present": {
+      "package_json": true,
+      "readme": true,
+      "dockerfile": true,
+      "docker_compose": true,
+      "env_example": true,
+      "drizzle_config": true,
+      "auth": true,
+      "tests": true,
+      "tailwind": true,
+      "tsconfig": true
+    },
+    "counts": {
+      "files": 72,
+      "tsxFiles": 32,
+      "testFiles": 3,
+      "routes": 9,
+      "components": 23
+    },
+    "stack": {
+      "tanstackStart": true,
+      "drizzle": true,
+      "betterAuth": true,
+      "shadcn": true,
+      "reui": false,
+      "postgres": true,
+      "dockerCompose": true,
+      "dockerfile": true
+    },
+    "secrets": {
+      "envCommitted": false,
+      "likelyLeakedKeys": [
+        "postgr…res@"
+      ]
+    },
+    "packageManager": "bun"
+  },
+  "runtime": {
+    "checks": [
+      {
+        "id": "install",
+        "label": "Install dependencies",
+        "ok": true,
+        "detail": "bun install ok",
+        "elapsedMs": 24
+      },
+      {
+        "id": "typecheck",
+        "label": "Typecheck",
+        "ok": true,
+        "detail": "typecheck ok",
+        "elapsedMs": 2101
+      },
+      {
+        "id": "build",
+        "label": "Production build",
+        "ok": true,
+        "detail": "build ok",
+        "elapsedMs": 1578
+      },
+      {
+        "id": "docker_build",
+        "label": "docker build",
+        "ok": false,
+        "detail": "a256:c68f9ac482e8951e471872cd9843b61610e5524ec782889d3838424fab7df728 0.0s done\n#4 DONE 3.1s\n\n#5 [internal] load build context\n#5 transferring context: 289.05MB 3.8s done\n#5 ...\n\n#6 [deps 2/4] WORKDIR /app\n#6 DONE 0.9s\n\n#5 [internal] load build context\n#5 DONE 4.0s\n\n#7 [deps 3/4] COPY package.json bun.lock ./\n#7 DONE 0.0s\n\n#8 [runner 3/9] RUN addgroup -S app && adduser -S app -G app\n#8 DONE 0.1s\n\n#9 [deps 4/4] RUN bun install --frozen-lockfile\n#9 0.121 bun install v1.2.23 (cf136713)\n#9 0.126 Resolving dependencies\n#9 1.573 Resolved, downloaded and extracted [200]\n#9 1.575 error: lockfile had changes, but lockfile is frozen\n#9 1.575 note: try re-running without --frozen-lockfile and commit the updated lockfile\n#9 ERROR: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n------\n > [deps 4/4] RUN bun install --frozen-lockfile:\n0.121 bun install v1.2.23 (cf136713)\n0.126 Resolving dependencies\n1.573 Resolved, downloaded and extracted [200]\n1.575 error: lockfile had changes, but lockfile is frozen\n1.575 note: try re-running without --frozen-lockfile and commit the updated lockfile\n------\nDockerfile:5\n--------------------\n   3 |     WORKDIR /app\n   4 |     COPY package.json bun.lock ./\n   5 | >>> RUN bun install --frozen-lockfile\n   6 |     \n   7 |     FROM oven/bun:1.2-alpine AS build\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1",
+        "elapsedMs": 7753
+      },
+      {
+        "id": "compose_up",
+        "label": "docker compose up --build -d",
+        "ok": false,
+        "detail": "7cdd4fddcbdb87a2f096a\n#5 resolve docker.io/oven/bun:1.2-alpine@sha256:0841c588f6304300baf1d395ae339ce09a6e18c4b6a7cdd4fddcbdb87a2f096a done\n#5 DONE 0.0s\n\n#6 [runner 3/9] RUN addgroup -S app && adduser -S app -G app\n#6 CACHED\n\n#7 [deps 2/4] WORKDIR /app\n#7 CACHED\n\n#8 [internal] load build context\n#8 transferring context: 2.48MB 0.7s done\n#8 DONE 0.7s\n\n#9 [deps 3/4] COPY package.json bun.lock ./\n#9 CACHED\n\n#10 [deps 4/4] RUN bun install --frozen-lockfile\n#10 0.105 bun install v1.2.23 (cf136713)\n#10 0.109 Resolving dependencies\n#10 1.475 Resolved, downloaded and extracted [200]\n#10 1.476 error: lockfile had changes, but lockfile is frozen\n#10 1.476 note: try re-running without --frozen-lockfile and commit the updated lockfile\n#10 ERROR: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n------\n > [deps 4/4] RUN bun install --frozen-lockfile:\n0.105 bun install v1.2.23 (cf136713)\n0.109 Resolving dependencies\n1.475 Resolved, downloaded and extracted [200]\n1.476 error: lockfile had changes, but lockfile is frozen\n1.476 note: try re-running without --frozen-lockfile and commit the updated lockfile\n------\nDockerfile:5\n\n--------------------\n\n   3 |     WORKDIR /app\n\n   4 |     COPY package.json bun.lock ./\n\n   5 | >>> RUN bun install --frozen-lockfile\n\n   6 |     \n\n   7 |     FROM oven/bun:1.2-alpine AS build\n\n--------------------\n\nfailed to solve: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n",
+        "elapsedMs": 3501
+      }
+    ],
+    "allPassed": false
+  },
+  "scores": {
+    "dimensions": [
+      {
+        "id": "deliverables",
+        "label": "Deliverable completeness",
+        "weight": 20,
+        "score": 20,
+        "max": 20,
+        "notes": []
+      },
+      {
+        "id": "backend",
+        "label": "Backend correctness",
+        "weight": 15,
+        "score": 15,
+        "max": 15,
+        "notes": []
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend / WebDev quality",
+        "weight": 25,
+        "score": 23,
+        "max": 25,
+        "notes": [
+          "reui not detected (optional but preferred)"
+        ],
+        "evidence": [
+          "shadcn/base-ui present"
+        ]
+      },
+      {
+        "id": "auth_flows",
+        "label": "Auth & product flows",
+        "weight": 10,
+        "score": 8,
+        "max": 10,
+        "notes": [
+          "no route protection signal"
+        ]
+      },
+      {
+        "id": "devops",
+        "label": "DevOps / runtime validation",
+        "weight": 15,
+        "score": 13,
+        "max": 15,
+        "notes": [
+          "runtime fail: docker_build — a256:c68f9ac482e8951e471872cd9843b61610e5524ec782889d3838424fab7df728 0.0s done\n#4 DONE 3.1s\n\n#5 [internal] load build context\n#5 transferring context: 289.05MB 3.8s done\n#5 ...\n\n#6 [deps 2/4] WORKDIR /app\n#6 DONE 0.9s\n\n#5 [internal] load build context\n#5 DONE 4.0s\n\n#7 [deps 3/4] COPY package.json bun.lock ./\n#7 DONE 0.0s\n\n#8 [runner 3/9] RUN addgroup -S app && adduser -S app -G app\n#8 DONE 0.1s\n\n#9 [deps 4/4] RUN bun install --frozen-lockfile\n#9 0.121 bun install v1.2.23 (cf136713)\n#9 0.126 Resolving dependencies\n#9 1.573 Resolved, downloaded and extracted [200]\n#9 1.575 error: lockfile had changes, but lockfile is frozen\n#9 1.575 note: try re-running without --frozen-lockfile and commit the updated lockfile\n#9 ERROR: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n------\n > [deps 4/4] RUN bun install --frozen-lockfile:\n0.121 bun install v1.2.23 (cf136713)\n0.126 Resolving dependencies\n1.573 Resolved, downloaded and extracted [200]\n1.575 error: lockfile had changes, but lockfile is frozen\n1.575 note: try re-running without --frozen-lockfile and commit the updated lockfile\n------\nDockerfile:5\n--------------------\n   3 |     WORKDIR /app\n   4 |     COPY package.json bun.lock ./\n   5 | >>> RUN bun install --frozen-lockfile\n   6 |     \n   7 |     FROM oven/bun:1.2-alpine AS build\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1",
+          "runtime fail: compose_up — 7cdd4fddcbdb87a2f096a\n#5 resolve docker.io/oven/bun:1.2-alpine@sha256:0841c588f6304300baf1d395ae339ce09a6e18c4b6a7cdd4fddcbdb87a2f096a done\n#5 DONE 0.0s\n\n#6 [runner 3/9] RUN addgroup -S app && adduser -S app -G app\n#6 CACHED\n\n#7 [deps 2/4] WORKDIR /app\n#7 CACHED\n\n#8 [internal] load build context\n#8 transferring context: 2.48MB 0.7s done\n#8 DONE 0.7s\n\n#9 [deps 3/4] COPY package.json bun.lock ./\n#9 CACHED\n\n#10 [deps 4/4] RUN bun install --frozen-lockfile\n#10 0.105 bun install v1.2.23 (cf136713)\n#10 0.109 Resolving dependencies\n#10 1.475 Resolved, downloaded and extracted [200]\n#10 1.476 error: lockfile had changes, but lockfile is frozen\n#10 1.476 note: try re-running without --frozen-lockfile and commit the updated lockfile\n#10 ERROR: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n------\n > [deps 4/4] RUN bun install --frozen-lockfile:\n0.105 bun install v1.2.23 (cf136713)\n0.109 Resolving dependencies\n1.475 Resolved, downloaded and extracted [200]\n1.476 error: lockfile had changes, but lockfile is frozen\n1.476 note: try re-running without --frozen-lockfile and commit the updated lockfile\n------\nDockerfile:5\n\n--------------------\n\n   3 |     WORKDIR /app\n\n   4 |     COPY package.json bun.lock ./\n\n   5 | >>> RUN bun install --frozen-lockfile\n\n   6 |     \n\n   7 |     FROM oven/bun:1.2-alpine AS build\n\n--------------------\n\nfailed to solve: process \"/bin/sh -c bun install --frozen-lockfile\" did not complete successfully: exit code: 1\n"
+        ]
+      },
+      {
+        "id": "code_quality",
+        "label": "Code quality & hygiene",
+        "weight": 10,
+        "score": 5,
+        "max": 10,
+        "notes": [
+          "possible secret leak (1)"
+        ]
+      },
+      {
+        "id": "architecture",
+        "label": "Architecture",
+        "weight": 5,
+        "score": 5,
+        "max": 5,
+        "notes": []
+      }
+    ],
+    "total": 89,
+    "max": 100,
+    "tier": "A",
+    "frontendSubscore": 92,
+    "backendSubscore": 92,
+    "devopsSubscore": 87,
+    "codeQualitySubscore": 86,
+    "killerStrength": "Deliverable completeness (20/20)",
+    "killerWeakness": "Code quality & hygiene (5/10) — possible secret leak (1)",
+    "auditedAt": "2026-08-06T12:56:29.196Z",
+    "auditor": "auto"
+  },
+  "finishedAt": "2026-08-06T12:56:29.196Z",
+  "elapsedSeconds": 874.68
+}

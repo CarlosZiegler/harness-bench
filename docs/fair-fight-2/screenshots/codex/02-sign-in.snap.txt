@@ -1,0 +1,6 @@
+- heading "Make the room easier to read." [level=1, ref=e1]
+- heading "Back to the pulse." [level=2, ref=e2]
+- textbox "Email" [required, ref=e3]
+- textbox "Password" [required, ref=e4]
+- button "Sign in" [ref=e5]
+- link "Create one" [ref=e6]

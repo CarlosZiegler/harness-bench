@@ -1,0 +1,202 @@
+{
+  "id": "94754b35-2ba7-4cd6-a713-6ac8945b8941",
+  "slug": "pulseboard-prime-agent-grok-4-5-high",
+  "appName": "pulseboard-prime-agent-grok-4-5-high",
+  "taskId": "pulseboard",
+  "harness": "prime-agent",
+  "models": [
+    {
+      "role": "solo",
+      "id": "xai/grok-4.5",
+      "label": "grok-4.5",
+      "provider": "xai",
+      "effort": "high"
+    }
+  ],
+  "status": "completed",
+  "startedAt": "2026-08-06T12:57:34.887Z",
+  "appDir": "/Users/zietec/work/harness-bench/apps/pulseboard-prime-agent-grok-4-5-high",
+  "resultDir": "/Users/zietec/work/harness-bench/results/pulseboard-prime-agent-grok-4-5-high",
+  "phases": [
+    {
+      "name": "build",
+      "status": "failed",
+      "startedAt": "2026-08-06T12:57:41.666Z",
+      "finishedAt": "2026-08-06T13:36:05.757Z",
+      "elapsedSeconds": 2304.091,
+      "exitCode": 1,
+      "logFile": "/Users/zietec/work/harness-bench/results/pulseboard-prime-agent-grok-4-5-high/build.log",
+      "tokens": {
+        "input": 288519,
+        "output": 57643,
+        "total": 346162
+      },
+      "error": "exit 1"
+    }
+  ],
+  "notes": [
+    "scaffold: ran `bunx --bun shadcn@latest init --preset b0 --template start --pointer --yes --force -n app`",
+    "validate prompt written (prime-agent/manual — outer loop or --phase validate)"
+  ],
+  "campaign": "fair-fight-1-harness-delta",
+  "controls": {
+    "model": "grok-4.5",
+    "effort": "high",
+    "mode": "agent-owns-plan",
+    "task": "pulseboard"
+  },
+  "error": "exit 1",
+  "structural": {
+    "present": {
+      "package_json": true,
+      "readme": true,
+      "dockerfile": true,
+      "docker_compose": true,
+      "env_example": true,
+      "drizzle_config": true,
+      "auth": true,
+      "tests": true,
+      "tailwind": true,
+      "tsconfig": true
+    },
+    "counts": {
+      "files": 76,
+      "tsxFiles": 34,
+      "testFiles": 3,
+      "routes": 9,
+      "components": 25
+    },
+    "stack": {
+      "tanstackStart": true,
+      "drizzle": true,
+      "betterAuth": true,
+      "shadcn": true,
+      "reui": true,
+      "postgres": true,
+      "dockerCompose": true,
+      "dockerfile": true
+    },
+    "secrets": {
+      "envCommitted": false,
+      "likelyLeakedKeys": []
+    },
+    "packageManager": "bun"
+  },
+  "runtime": {
+    "checks": [
+      {
+        "id": "install",
+        "label": "Install dependencies",
+        "ok": true,
+        "detail": "bun install ok",
+        "elapsedMs": 26
+      },
+      {
+        "id": "typecheck",
+        "label": "Typecheck",
+        "ok": true,
+        "detail": "typecheck ok",
+        "elapsedMs": 2534
+      },
+      {
+        "id": "build",
+        "label": "Production build",
+        "ok": true,
+        "detail": "build ok",
+        "elapsedMs": 1506
+      },
+      {
+        "id": "docker_build",
+        "label": "docker build",
+        "ok": true,
+        "detail": "docker build ok",
+        "elapsedMs": 1649
+      },
+      {
+        "id": "compose_up",
+        "label": "docker compose up --build -d",
+        "ok": true,
+        "detail": "compose up ok",
+        "elapsedMs": 28092
+      }
+    ],
+    "allPassed": true
+  },
+  "scores": {
+    "dimensions": [
+      {
+        "id": "deliverables",
+        "label": "Deliverable completeness",
+        "weight": 20,
+        "score": 20,
+        "max": 20,
+        "notes": []
+      },
+      {
+        "id": "backend",
+        "label": "Backend correctness",
+        "weight": 15,
+        "score": 15,
+        "max": 15,
+        "notes": []
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend / WebDev quality",
+        "weight": 25,
+        "score": 25,
+        "max": 25,
+        "notes": [],
+        "evidence": [
+          "shadcn/base-ui present",
+          "reui present"
+        ]
+      },
+      {
+        "id": "auth_flows",
+        "label": "Auth & product flows",
+        "weight": 10,
+        "score": 10,
+        "max": 10,
+        "notes": []
+      },
+      {
+        "id": "devops",
+        "label": "DevOps / runtime validation",
+        "weight": 15,
+        "score": 15,
+        "max": 15,
+        "notes": []
+      },
+      {
+        "id": "code_quality",
+        "label": "Code quality & hygiene",
+        "weight": 10,
+        "score": 8,
+        "max": 10,
+        "notes": []
+      },
+      {
+        "id": "architecture",
+        "label": "Architecture",
+        "weight": 5,
+        "score": 5,
+        "max": 5,
+        "notes": []
+      }
+    ],
+    "total": 98,
+    "max": 100,
+    "tier": "A",
+    "frontendSubscore": 100,
+    "backendSubscore": 100,
+    "devopsSubscore": 100,
+    "codeQualitySubscore": 94,
+    "killerStrength": "Deliverable completeness (20/20)",
+    "killerWeakness": "Code quality & hygiene (8/10)",
+    "auditedAt": "2026-08-06T13:36:39.612Z",
+    "auditor": "auto"
+  },
+  "finishedAt": "2026-08-06T13:36:39.612Z",
+  "elapsedSeconds": 2344.725
+}

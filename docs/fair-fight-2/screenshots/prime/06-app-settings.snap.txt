@@ -1,0 +1,11 @@
+- navigation "Primary navigation" [ref=e3]
+  - link "Dashboard" [ref=e9]
+  - link "Pulses" [ref=e10]
+  - link "Settings" [ref=e11]
+- button "Switch to light mode" [ref=e4]
+- button "Sign out" [ref=e5]
+- heading "Workspace" [level=1, ref=e2]
+- textbox "Name" [required, ref=e6]: Bench User's Workspace
+- textbox "Slug" [disabled, ref=e7]: bench-user
+- button "Save changes" [ref=e8]
+- region "Notifications alt+T" [ref=e1]

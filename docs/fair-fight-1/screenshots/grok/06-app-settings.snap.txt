@@ -1,0 +1,11 @@
+- navigation "App" [ref=e2]
+  - link "Dashboard" [ref=e6]
+  - link "Pulses" [ref=e7]
+  - link "Settings" [ref=e8]
+- button "Toggle dark mode" [ref=e3]
+- button "Sign out" [ref=e4]
+- heading "Settings" [level=1, ref=e5]
+- textbox "Name" [required, ref=e9]: Bench User's Workspace
+- textbox "Slug" [disabled, ref=e10]: bench-user-VHwf1BLF
+- button "Save changes" [disabled, ref=e11]
+- region "Notifications alt+T" [ref=e1]

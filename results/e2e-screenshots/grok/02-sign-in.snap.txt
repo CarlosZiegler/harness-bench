@@ -1,0 +1,7 @@
+- button "Toggle dark mode" [ref=e4]
+- link "Pulseboard" [ref=e2]
+- textbox "Email" [required, ref=e5]
+- textbox "Password" [required, ref=e6]
+- button "Sign in" [ref=e7]
+- link "Sign up" [ref=e3]
+- region "Notifications alt+T" [ref=e1]

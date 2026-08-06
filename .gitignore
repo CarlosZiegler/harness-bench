@@ -1,18 +1,65 @@
+# deps / build
 node_modules
 .DS_Store
 dist
 dist-ssr
-*.local
-.env*
-.tanstack
-.wrangler
 .output
 .vinxi
+.tanstack
+.turbo
+.wrangler
+*.tsbuildinfo
 __unconfig*
 todos.json
+*.local
 
-# turbo
-.turbo
+# secrets — never commit
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
 
-# typescript
-*.tsbuildinfo
+# package manager noise
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# agent handoff / local smoke
+**/.bench-*.md
+**/.bench-*.log
+**/BENCH_VALIDATE.md
+**/.expect/
+**/expect-server.log
+**/docker-compose.e2e.yml
+
+# nested git (shadcn scaffold) — strip before commit
+**/.git/
+
+# results: keep scores/docs, drop heavy logs/sessions
+results/**
+!results/.gitkeep
+!results/**/
+!results/**/result.json
+!results/**/report.md
+!results/**/HANG.md
+!results/**/attempts/
+!results/**/attempts/**
+!results/index.json
+results/**/session/
+results/**/build.log
+results/**/validate.log
+results/**/*.log
+results/_campaign_logs/
+results/e2e-screenshots/logs/
+
+# keep e2e screenshot images if present under results
+!results/e2e-screenshots/
+!results/e2e-screenshots/**
+results/e2e-screenshots/logs/
+
+# editor
+.idea
+.vscode
+*.swp

@@ -1,0 +1,32 @@
+{
+  "harnesses": [
+    {
+      "id": "prime-agent",
+      "label": "Prime Agent",
+      "binary": "prime-agent",
+      "headless": "prime-agent -p --mode json --cwd <dir> --provider xai --model grok-4.5 --thinking high --autonomous -- <prompt>"
+    },
+    {
+      "id": "grok-cli",
+      "label": "Grok CLI",
+      "binary": "grok",
+      "docs": "https://docs.x.ai/build/cli/headless-scripting",
+      "headless": "grok --no-auto-update -p <prompt> -m grok-4.5 --effort high --cwd <dir> --always-approve --output-format json --no-alt-screen"
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "binary": "claude"
+    },
+    {
+      "id": "codex",
+      "label": "OpenAI Codex CLI",
+      "binary": "codex"
+    },
+    {
+      "id": "manual",
+      "label": "Manual / outer agent",
+      "binary": null
+    }
+  ]
+}

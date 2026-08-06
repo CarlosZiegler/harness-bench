@@ -1,0 +1,7 @@
+- heading "Create your account" [level=1, ref=e1]
+- textbox "Name" [required, ref=e3]
+- textbox "Email" [required, ref=e4]
+- textbox "Password" [required, ref=e5]
+- button "Create account" [ref=e6]
+- link "Sign in" [ref=e7]
+- region "Notifications alt+T" [ref=e2]

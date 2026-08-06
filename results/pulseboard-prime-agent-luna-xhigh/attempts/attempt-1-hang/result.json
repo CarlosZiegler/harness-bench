@@ -1,0 +1,51 @@
+{
+  "id": "a436df81-3b77-4ae0-ab96-02c8fb20f431",
+  "slug": "pulseboard-prime-agent-luna-xhigh",
+  "appName": "pulseboard-prime-agent-luna-xhigh",
+  "taskId": "pulseboard",
+  "harness": "prime-agent",
+  "models": [
+    {
+      "role": "solo",
+      "id": "gpt-5.6-luna",
+      "label": "luna",
+      "provider": "openai-codex",
+      "effort": "xhigh"
+    }
+  ],
+  "status": "timeout",
+  "startedAt": "2026-08-06T13:50:19.602Z",
+  "appDir": "/Users/zietec/work/harness-bench/apps/pulseboard-prime-agent-luna-xhigh",
+  "resultDir": "/Users/zietec/work/harness-bench/results/pulseboard-prime-agent-luna-xhigh",
+  "phases": [
+    {
+      "name": "build",
+      "status": "timeout",
+      "startedAt": "2026-08-06T13:50:19.602Z",
+      "finishedAt": "2026-08-06T14:41:07.682344Z",
+      "elapsedSeconds": 3048.080344,
+      "exitCode": null,
+      "error": "prime-agent process hung idle; killed by operator after diagnosis",
+      "logFile": "/Users/zietec/work/harness-bench/results/pulseboard-prime-agent-luna-xhigh/build.log"
+    }
+  ],
+  "notes": [
+    "scaffold: ran `bunx --bun shadcn@latest init --preset b0 --template start --pointer --yes --force -n app`",
+    "HANG_CLASSIFICATION: agent_did_not_exit (not user mid-run edit)",
+    "EVIDENCE: child pid idle kevent wait; argv display empty/spaces; worker 40584 parented under pre-existing daemon pid 45061",
+    "EVIDENCE: last product mtime ~15:56 dist build; campaign killed ~16:39",
+    "EVIDENCE: vite dev left on :3000 from app cwd; possible port conflict with apps/web compare site",
+    "CONTROLS_OK: models=[{gpt-5.6-luna, provider openai-codex, effort xhigh}] \u2014 not Grok",
+    "BENCH_GAP: no streaming build.log until process exit; hang invisible except process/file mtime probes"
+  ],
+  "campaign": "fair-fight-2-luna-harness-delta",
+  "controls": {
+    "model": "gpt-5.6-luna",
+    "effort": "xhigh",
+    "mode": "agent-owns-plan",
+    "task": "pulseboard"
+  },
+  "finishedAt": "2026-08-06T14:41:07.682344Z",
+  "elapsedSeconds": 3048.080344,
+  "error": "Agent hang after product build: prime-agent -p child idle ~49m with 0% CPU; no app file writes for ~43m after last dist build; no BENCH_VALIDATE.md; orphaned `vite dev --port 3000` left running; build phase never returned to bench (no build.log). Model controls correct (gpt-5.6-luna @ xhigh)."
+}

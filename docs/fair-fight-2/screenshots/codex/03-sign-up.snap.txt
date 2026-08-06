@@ -1,0 +1,7 @@
+- heading "Make the room easier to read." [level=1, ref=e1]
+- heading "Give your team a read." [level=2, ref=e2]
+- textbox "Your name" [required, ref=e3]
+- textbox "Work email" [required, ref=e4]
+- textbox "Password" [required, ref=e5]
+- button "Create workspace" [ref=e6]
+- link "Sign in" [ref=e7]

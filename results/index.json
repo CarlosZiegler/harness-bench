@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "pulseboard-prime-agent-luna-xhigh",
+    "taskId": "pulseboard",
+    "harness": "prime-agent",
+    "models": [
+      {
+        "role": "solo",
+        "id": "gpt-5.6-luna",
+        "label": "luna",
+        "provider": "openai-codex",
+        "effort": "xhigh"
+      }
+    ],
+    "status": "completed",
+    "total": 98,
+    "tier": "A",
+    "elapsedSeconds": 3848.193
+  },
+  {
+    "slug": "pulseboard-prime-agent-grok-4-5-high",
+    "taskId": "pulseboard",
+    "harness": "prime-agent",
+    "models": [
+      {
+        "role": "solo",
+        "id": "xai/grok-4.5",
+        "label": "grok-4.5",
+        "provider": "xai",
+        "effort": "high"
+      }
+    ],
+    "status": "completed",
+    "total": 98,
+    "tier": "A",
+    "elapsedSeconds": 2344.725
+  },
+  {
+    "slug": "pulseboard-grok-cli-grok-4-5-high",
+    "taskId": "pulseboard",
+    "harness": "grok-cli",
+    "models": [
+      {
+        "role": "solo",
+        "id": "grok-4.5",
+        "label": "grok-4.5",
+        "effort": "high"
+      }
+    ],
+    "status": "completed_with_errors",
+    "total": 89,
+    "tier": "A",
+    "elapsedSeconds": 874.68
+  },
+  {
+    "slug": "pulseboard-codex-luna-xhigh",
+    "taskId": "pulseboard",
+    "harness": "codex",
+    "models": [
+      {
+        "role": "solo",
+        "id": "gpt-5.6-luna",
+        "label": "luna",
+        "effort": "xhigh"
+      }
+    ],
+    "status": "completed_with_errors",
+    "total": 89,
+    "tier": "A",
+    "elapsedSeconds": 2299
+  }
+]

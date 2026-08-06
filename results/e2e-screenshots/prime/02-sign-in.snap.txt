@@ -1,0 +1,6 @@
+- heading "Welcome back" [level=1, ref=e1]
+- textbox "Email" [required, ref=e3]
+- textbox "Password" [required, ref=e4]
+- button "Sign in" [ref=e5]
+- link "Create an account" [ref=e6]
+- region "Notifications alt+T" [ref=e2]
